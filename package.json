@@ -1,0 +1,29 @@
+{
+  "name": "postman-pat",
+  "version": "1.0.0",
+  "description": "Runs multiple postman collections in sequence, discovers vars by naming convention",
+  "main": "index.js",
+  "bin": {
+    "pat": "./index.js"
+  },
+  "author": "Tim Williams",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idlem1nd/postman-pat.git"
+  },
+  "keywords": [
+    "Postman",
+    "REST",
+    "newman"
+  ],
+  "bugs": {
+    "url": "https://github.com/idlem1nd/postman-pat/issues"
+  },
+  "homepage": "https://github.com/idlem1nd/postman-pat#readme"
+}
