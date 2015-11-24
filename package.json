@@ -9,7 +9,8 @@
   "author": "Tim Williams",
   "license": "Apache-2.0",
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "newman": "^1.2.23"
   },
   "devDependencies": {},
   "scripts": {

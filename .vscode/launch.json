@@ -10,7 +10,10 @@
 			"args": [ 
 				"samples/sample.json.postman_collection",
 				"samples/sample_copy.json.postman_collection",
-				"-e samples/sample.postman_environment"
+				"-e",
+				"samples/sample.postman_environment",
+				"-d",
+				"samples/data"
 			],
 			"cwd": ".",
 			"runtimeExecutable": null,
