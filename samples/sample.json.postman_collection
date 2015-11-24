@@ -1,0 +1,33 @@
+{
+	"id": "b37d66a1-508f-d3ae-9eed-52125b7560da",
+	"name": "sample",
+	"description": "",
+	"order": [
+		"2c23bf78-21b4-e805-196b-6dcfcff01755"
+	],
+	"folders": [],
+	"timestamp": 1448365789585,
+	"owner": "1320",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "2c23bf78-21b4-e805-196b-6dcfcff01755",
+			"headers": "",
+			"url": "{{baseUrl}}/Echo?app_id={{app_id}}&app_key={{app_key}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Response time is less than 1000ms\"] = responseTime < 1000;\ntests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1448365828986,
+			"name": "Echo",
+			"description": "",
+			"collectionId": "b37d66a1-508f-d3ae-9eed-52125b7560da"
+		}
+	]
+}
