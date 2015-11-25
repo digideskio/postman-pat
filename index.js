@@ -4,15 +4,13 @@ var program = require('commander');
 var fs = require('fs');
 var newman = require('newman');
 var queue = require('queue-async');
+var chalk = require('chalk');
 
 program.arguments('<file> [otherFiles...]')
 .option('-e, --environment <environment>', 'The postman environment to use')
 .option('-d, --data-path <dataPath>', 'The directory to search for data files')
 .action(function(file, otherFiles) {
-	console.log('Starting newman run for environment: %s', program.environment);
-	console.log('Will search datapath: %s', program.dataPath)
-	console.log(file);
-	
+
 	var allFiles = [ file ];
 	if (otherFiles)	{
 		otherFiles.forEach(function(otherFile) {
@@ -20,6 +18,14 @@ program.arguments('<file> [otherFiles...]')
 		});
 		allFiles = allFiles.concat(otherFiles);
 	}
+	console.log(chalk.bold.gray.bgMagenta(' Pat: the newman runner to the postman runner '));
+    console.log('');
+	allFiles.forEach(function(file)	{
+		console.log(chalk.yellow('collection %s'), file);
+	})
+	console.log(chalk.bold.yellow('Total: ' + allFiles.length + ' file(s)'));
+	console.log(chalk.cyan('environment: %s'), program.environment);
+	console.log(chalk.blue('data: %s'), program.dataPath);
 	
 	runPostmanForFiles(allFiles, program.dataPath, program.environment);
 })
@@ -39,7 +45,7 @@ function runPostmanForFiles(allFiles, dataPath, environment) {
 		var dataFile = path.join(dataPath, name + ".data.json");
 		
 		if (!fs.statSync(dataFile).isFile()) {
-			console.log('Data file %s does not exist', dataFile);
+			console.log(chalk.bold.red('Data file %s does not exist'), dataFile);
 			process.exit(1);
      	}
 		else {
