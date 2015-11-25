@@ -44,5 +44,22 @@ function runPostmanForFiles(allFiles, dataPath, environment) {
 
 function runPostman(file, dataFile, environment) {
 	
+	var newman = require('newman');
+	var JSON5 = require('json5');
+
+	// read the collectionjson file
+	var collectionJson = fs.readFileSync(file, 'utf8');
+	var collection = JSON5.parse(collectionJson);
 	
+	// define Newman options
+	var newmanOptions = {
+		envJson: JSON5.parse(fs.readFileSync(environment, "utf-8")), // environment file (in parsed json format)
+		dataFile: dataFile,                    // data file if required
+		iterationCount: 1,                    // define the number of times the runner should run
+		outputFile: null,            // the file to export to
+		responseHandler: null, // the response handler to use
+		stopOnError: false
+	}
+	
+	newman.execute(collection, newmanOptions);
 }

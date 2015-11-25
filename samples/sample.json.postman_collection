@@ -14,7 +14,7 @@
 		{
 			"id": "2c23bf78-21b4-e805-196b-6dcfcff01755",
 			"headers": "",
-			"url": "{{baseUrl}}/Echo?app_id={{app_id}}&app_key={{app_key}}",
+			"url": "https://duckduckgo.{{tld}}/search?q={{searchQuery}},
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "GET",
@@ -25,7 +25,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1448365828986,
-			"name": "Echo",
+			"name": "Search DuckDuckGo",
 			"description": "",
 			"collectionId": "b37d66a1-508f-d3ae-9eed-52125b7560da"
 		}
