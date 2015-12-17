@@ -132,7 +132,7 @@ function runPostmanExternal(file, dataFile, environment, callback) {
 	var args = [ '-c', file, 
  				 '-e', environment, 
   				 '-d', dataFile,
-				 '-r', 40000, // timeout
+				 '-r', 60000, // timeout
 				 '-n', '1', // iterations
 				 '-j', // don't print summary
 				 '-x']; // use non-zero exit code to indicate one or more tests failed.
