@@ -84,7 +84,7 @@ function runPostmanForFiles(allFiles, dataPath, environment) {
 	q.awaitAll(function(error, results) {
 		console.log('');
 		console.log('Finished all tasks for this run...');
-		if (runCount++ > program.repetitions) {
+		if (++runCount > program.repetitions) {
 			console.log(chalk.magenta('Finished all runs.'));
 			process.exit();
 		}
